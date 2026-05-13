@@ -26,11 +26,11 @@ const G = `
 `;
 
 const MC = {
-  mood:  {p:"#9b59b6",g:"rgba(155,89,182,.55)",bg:"linear-gradient(160deg,#1a0a2e,#2d0a4e,#0d0d1a)",a:"#c39bd3"},
-  dice:  {p:"#e67e22",g:"rgba(230,126,34,.55)", bg:"linear-gradient(160deg,#2e1a00,#4e2d00,#1a0d00)",a:"#f0a263"},
-  daily: {p:"#27ae60",g:"rgba(39,174,96,.55)",  bg:"linear-gradient(160deg,#002e12,#004e20,#001a0a)",a:"#58d68d"},
-  karma: {p:"#2980b9",g:"rgba(41,128,185,.55)", bg:"linear-gradient(160deg,#001a2e,#002e4e,#00101a)",a:"#5dade2"},
-  flow:  {p:"#e91e8c",g:"rgba(233,30,140,.55)", bg:"linear-gradient(160deg,#2e0018,#4e0030,#1a0010)",a:"#f06fb0"},
+  mood:  {p:"#9b59b6",g:"rgba(155,89,182,.55)",bg:"linear-gradient(160deg,#2a1245,#3d1a6e,#1a0a35)",a:"#c39bd3"},
+  dice:  {p:"#e67e22",g:"rgba(230,126,34,.55)", bg:"linear-gradient(160deg,#3d2200,#6e4000,#2a1800)",a:"#f0a263"},
+  daily: {p:"#27ae60",g:"rgba(39,174,96,.55)",  bg:"linear-gradient(160deg,#003d18,#006e2d,#002210)",a:"#58d68d"},
+  karma: {p:"#2980b9",g:"rgba(41,128,185,.55)", bg:"linear-gradient(160deg,#00223d,#00406e,#001525)",a:"#5dade2"},
+  flow:  {p:"#e91e8c",g:"rgba(233,30,140,.55)", bg:"linear-gradient(160deg,#3d0022,#6e0045,#220015)",a:"#f06fb0"},
 };
 
 const T = {
@@ -1241,7 +1241,7 @@ export default function App() {
 
   const handleShare = async () => {
     if(!flip) return;
-    const text = `FLIP — ${t.labels[mode]}\n\n${flip.title}\n${flip.body}\n\nhttps://flip-gamma-coral.vercel.app`;
+    const text = `FLIP — ${t.labels[mode]}\n\n${flip.t}\n${flip.b}\n\nhttps://flip-gamma-coral.vercel.app`;
     if(navigator.share){try{await navigator.share({title:"FLIP",text});}catch{}}
     else{navigator.clipboard.writeText(text);setCopied(true);setTimeout(()=>setCopied(false),2000);}
   };
