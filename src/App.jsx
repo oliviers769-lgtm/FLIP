@@ -1322,9 +1322,9 @@ export default function App() {
 
           {/* RÉSULTAT */}
           {flip&&(
-            <div className="result-card" key={flip.title} style={{background:"rgba(255,255,255,.07)",backdropFilter:"blur(12px)",border:`1px solid ${co.p}44`,borderRadius:"1.5rem",padding:"22px 26px",width:"100%",maxWidth:360}}>
-              <div style={{fontFamily:"Space Grotesk,sans-serif",fontWeight:800,fontSize:"clamp(15px,4.5vw,19px)",color:co.a,marginBottom:9}}>{flip.title}</div>
-              <div style={{fontSize:"clamp(12px,3.5vw,14px)",color:"rgba(255,255,255,.72)",lineHeight:1.65}}>{flip.body}</div>
+            <div className="result-card" key={flip.t} style={{background:"rgba(255,255,255,.07)",backdropFilter:"blur(12px)",border:`1px solid ${co.p}44`,borderRadius:"1.5rem",padding:"22px 26px",width:"100%",maxWidth:360}}>
+              <div style={{fontFamily:"Space Grotesk,sans-serif",fontWeight:800,fontSize:"clamp(15px,4.5vw,19px)",color:co.a,marginBottom:9}}>{flip.t}</div>
+              <div style={{fontSize:"clamp(12px,3.5vw,14px)",color:"rgba(255,255,255,.72)",lineHeight:1.65}}>{flip.b}</div>
               <button onClick={handleShare}
                       style={{marginTop:14,padding:"8px 20px",borderRadius:"1.5rem",background:`${co.p}33`,border:`1px solid ${co.p}66`,color:co.a,fontWeight:700,fontSize:13,cursor:"pointer",transition:"all .2s",letterSpacing:".04em",WebkitTapHighlightColor:"transparent"}}>
                 {copied?t.copied:`${t.share} ↗`}
