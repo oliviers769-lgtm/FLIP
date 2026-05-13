@@ -1205,6 +1205,8 @@ export default function App() {
   const [copied,setCopied]         = useState(false);
   const [used,setUsed]             = useState({});
   const touchX = useRef(null);
+  const audioRef = useRef(null);
+  const [muted, setMuted] = useState(true);
   const t  = T[lang];
   const co = MC[mode];
 
@@ -1229,6 +1231,10 @@ export default function App() {
 
   const changeMode = m => {setMode(m);setIsOn(false);setFlip(null);};
   const onTouchStart = e => {touchX.current=e.touches[0].clientX;};
+  const toggleSound = () => {
+  if(muted){ audioRef.current.play(); setMuted(false); }
+  else { audioRef.current.pause(); setMuted(true); }
+};
   const onTouchEnd   = e => {
     if(!touchX.current) return;
     const dx=e.changedTouches[0].clientX-touchX.current;
@@ -1261,6 +1267,7 @@ export default function App() {
   return (
     <>
       <style>{G}</style>
+      <audio ref={audioRef} src="/ambiance.mp3" loop preload="auto"/>
       <div style={{minHeight:"100vh",background:co.bg,display:"flex",flexDirection:"column",transition:"background .6s",overflowX:"hidden",fontFamily:"Inter,sans-serif"}}
            onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
 
@@ -1273,6 +1280,9 @@ export default function App() {
                 {isMob?T[l].flag:l.toUpperCase()}
               </button>
             ))}
+            <button onClick={toggleSound} style={{background:"transparent",border:"none",color:"#fff",fontSize:20,cursor:"pointer"}}>
+  {muted ? "🔇" : "🔊"}
+</button>
           </div>
         </header>
 
