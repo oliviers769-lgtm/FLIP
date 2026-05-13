@@ -1221,6 +1221,7 @@ export default function App() {
 
   const handleSwitch = useCallback(() => {
     if(animating) return;
+     if(muted===false && audioRef.current.paused) audioRef.current.play();
     setAnimating(true); setRipple(true);
     setTimeout(()=>setRipple(false),700);
     setTimeout(()=>{
