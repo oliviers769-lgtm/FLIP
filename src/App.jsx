@@ -1339,7 +1339,7 @@ export default function App() {
           <span onClick={()=>setShowContact(true)} style={{color:co.a,cursor:"pointer",textDecoration:"underline",opacity:.7}}>{t.contact}</span>
           {" · "}
           <a href="https://orchestrateur-ai.fr" target="_blank" rel="noopener noreferrer" style={{color:co.a,opacity:.7}}>Olivier Scafi · Orchestrateur IA</a>
-          <br/><span style={{opacity:.45}}>Claude · Copilot · Grok · Mistral</span>
+          <br/><span style={{opacity:.45}}>Claude · MiniMax AI . Gemini . ChatGPT . Deepseek . Perplexity . Copilot · Grok · Meta AI</span>
         </footer>
 
         {/* MODE BAR */}
