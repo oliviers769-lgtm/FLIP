@@ -1206,7 +1206,7 @@ export default function App() {
   const [used,setUsed]             = useState({});
   const touchX = useRef(null);
   const audioRef = useRef(null);
-  const [muted, setMuted] = useState(true);
+  const [muted, setMuted] = useState(false);
   const t  = T[lang];
   const co = MC[mode];
 
@@ -1267,7 +1267,7 @@ export default function App() {
   return (
     <>
       <style>{G}</style>
-      <audio ref={audioRef} src="/ambiance.mp3" loop preload="auto"/>
+      <audio ref={audioRef} src="/ambiance.mp3" loop preload="auto" autoPlay/>
       <div style={{minHeight:"100vh",background:co.bg,display:"flex",flexDirection:"column",transition:"background .6s",overflowX:"hidden",fontFamily:"Inter,sans-serif"}}
            onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
 
@@ -1280,9 +1280,7 @@ export default function App() {
                 {isMob?T[l].flag:l.toUpperCase()}
               </button>
             ))}
-            <button onClick={toggleSound} style={{background:"transparent",border:"none",color:"#fff",fontSize:20,cursor:"pointer"}}>
-  {muted ? "🔇" : "🔊"}
-</button>
+            
           </div>
         </header>
 
@@ -1342,6 +1340,9 @@ export default function App() {
             </div>
           )}
           {!flip&&<p className="pulse" style={{color:"rgba(255,255,255,.28)",fontSize:13,letterSpacing:".03em"}}>{t.tap}</p>}
+          <button onClick={toggleSound} style={{marginTop:24,background:"transparent",border:"1px solid rgba(255,255,255,.2)",borderRadius:"2rem",color:"#fff",fontSize:16,padding:"10px 24px",cursor:"pointer",letterSpacing:".05em"}}>
+  {muted ? "🔇 Son" : "🔊 Son"}
+</button>
         </main>
 
         {/* FOOTER */}
